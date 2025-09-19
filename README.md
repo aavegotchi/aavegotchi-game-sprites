@@ -55,6 +55,34 @@ gotchi-generator/
 npm install gotchi-generator
 ```
 
+### Installing in monorepos and pnpm workspaces
+
+If your repository uses pnpm or a pnpm workspace layout (presence of `pnpm-lock.yaml` and `node_modules/.pnpm`):
+
+```bash
+# At the workspace root
+corepack enable
+pnpm add -w gotchi-generator
+
+# Or add to a specific package only
+pnpm -F <package-name> add gotchi-generator
+```
+
+Using npm inside a pnpm-managed workspace can cause npm to crash with an internal Arborist error like:
+
+```text
+TypeError: Cannot read properties of null (reading 'matches')
+```
+
+If you must use npm in such a workspace, either install from a leaf package directory (not the workspace root) or use the nested strategy:
+
+```bash
+# from the package directory
+npm install gotchi-generator --install-strategy=nested
+```
+
+Package details: [gotchi-generator on npm](https://www.npmjs.com/package/gotchi-generator)
+
 ESM:
 
 ```ts

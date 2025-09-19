@@ -24,7 +24,10 @@
   "scripts": {
     "generate": "tsx src/generate_spritesheets.ts",
     "build": "tsup",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release:patch": "npm version patch -m \"chore(release): %s\" && npm publish --access public",
+    "release:minor": "npm version minor -m \"chore(release): %s\" && npm publish --access public",
+    "release:major": "npm version major -m \"chore(release): %s\" && npm publish --access public"
   },
   "dependencies": {
     "sharp": "^0.33.0"
@@ -37,5 +40,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
