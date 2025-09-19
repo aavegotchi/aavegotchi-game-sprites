@@ -1,0 +1,18 @@
+node_modules
+generator
+unneeded
+
+# build artifacts
+dist
+# generated sprites
+website/spritesheets
+# secret scan reports
+gitleaks.sarif
+# logs
+failed_gotchis.json
+missing_layers.json
+# macOS
+.DS_Store
+# npm/yarn logs
+npm-debug.log*
+yarn-error.log

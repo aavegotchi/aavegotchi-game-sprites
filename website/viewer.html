@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AaveGotchi Spritesheet Viewer</title>
+    <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="aavegotchi.png" alt="Aavegotchi" class="logo">
+        </div>
+        <h1>Spritesheet Viewer</h1>
+
+        <div class="stats">
+            <div class="stats-row">
+                <div class="stat">
+                    <span>Total Sprites:</span>
+                    <span class="stat-value" id="totalSprites">0</span>
+                </div>
+                <div class="stat">
+                    <span>Loaded:</span>
+                    <span class="stat-value" id="loadedSprites">0</span>
+                </div>
+                <div class="stat">
+                    <span>Current Animation:</span>
+                    <span class="stat-value" id="currentAnimation">Idle</span>
+                </div>
+                <div class="stat">
+                    <span>Page:</span>
+                    <span class="stat-value" id="currentPage">1/1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="controls-row">
+                <div class="control-group">
+                    <label for="searchInput">Search Gotchi ID:</label>
+                    <input type="text" id="searchInput" placeholder="Enter ID (e.g., 3, 31, 240)">
+                </div>
+
+                <div class="control-group">
+                    <label for="rangeInput">ID Range:</label>
+                    <input type="text" id="rangeInput" placeholder="e.g., 1-100">
+                </div>
+
+                <div class="control-group">
+                    <label for="perPage">Per Page:</label>
+                    <select id="perPage">
+                        <option value="20">20</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Animation:</label>
+                    <div class="animation-buttons">
+                        <button id="idleBtn" class="active">Idle</button>
+                        <button id="walkBtn">Walk</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="speedSlider">Animation Speed:</label>
+                    <div class="speed-control">
+                        <input type="range" id="speedSlider" min="0.5" max="3" step="0.1" value="1">
+                        <span id="speedValue">1x</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-row">
+                <button id="loadAllBtn">Load All Sprites</button>
+                <!-- <button id="randomBtn">Random Gotchi</button> -->
+                <button id="resetBtn">Reset Filters</button>
+                <!-- <button id="exportBtn">Export Visible IDs</button> -->
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            Loading sprites...
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            Error loading sprites
+        </div>
+
+        <div id="gallery" class="gallery">
+            <!-- Sprites will be loaded here -->
+        </div>
+
+        <div id="pagination" class="pagination">
+            <!-- Pagination buttons will be added here -->
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" style="margin-top: 0; color: #ea3cf7; font-size: 2em;">Gotchi Details</h2>
+            <div class="modal-sprite-container">
+                <div id="modalSprite" class="modal-sprite sprite idle"></div>
+            </div>
+            <div id="modalInfo" style="text-align: center; font-size: 1.1em;"></div>
+        </div>
+    </div>
+
+    <script src="viewer.js"></script>
+</body>
+</html>
