@@ -24,7 +24,6 @@
   "scripts": {
     "generate": "tsx src/generate_spritesheets.ts",
     "build": "tsup",
-    "build:web": "tsc -p tsconfig.web.json",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
