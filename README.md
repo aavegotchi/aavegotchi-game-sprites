@@ -83,6 +83,100 @@ npm install gotchi-generator --install-strategy=nested
 
 Package details: [gotchi-generator on npm](https://www.npmjs.com/package/gotchi-generator)
 
+### Accessing bundled assets (Trait Files)
+
+When installed from npm, the package includes the sprite assets under `Trait Files/` and the default `config.json`.
+
+To resolve the package base path programmatically:
+
+```ts
+import { getPackageBasePath } from "gotchi-generator";
+
+const basePath = getPackageBasePath();
+// basePath points to the package root where `Trait Files/` and `config.json` live
+```
+
+You can then pass `basePath` to `generateSpritesheet`:
+
+```ts
+const result = await generateSpritesheet(gotchi, config, basePath, "./output");
+```
+
+### Programmatic usage (AI assistants)
+
+Use these steps when writing code that imports the package:
+
+1. Import APIs and resolve the package base path
+
+```ts
+import fs from "node:fs";
+import path from "node:path";
+import {
+  generateSpritesheet,
+  getPackageBasePath,
+  type Gotchi,
+  type Config,
+} from "gotchi-generator";
+
+const basePath = getPackageBasePath(); // has "Trait Files/" and "config.json"
+```
+
+2. Load the default config shipped with the package
+
+```ts
+const configPath = path.join(basePath, "config.json");
+const config: Config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+```
+
+3. Provide a gotchi object and generate a single spritesheet
+
+```ts
+const gotchi: Gotchi = {
+  id: 3,
+  collateral: "aDAI",
+  attributes: [
+    { trait_type: "Base Body", value: "aDAI" },
+    { trait_type: "Eye Shape", value: "uncommon_high_3" },
+    { trait_type: "Eye Color", value: "rare_high" },
+    { trait_type: "Wearable (Body)", value: "Witchy Cloak" },
+  ],
+};
+
+const { success, error, details } = await generateSpritesheet(
+  gotchi,
+  config,
+  basePath,
+  "./output",
+  false
+);
+```
+
+4. Batch generation with basic concurrency
+
+```ts
+async function generateBatch(
+  gotchis: Gotchi[],
+  config: Config,
+  outDir: string
+) {
+  const concurrency = 10;
+  for (let i = 0; i < gotchis.length; i += concurrency) {
+    const slice = gotchis.slice(i, i + concurrency);
+    const results = await Promise.all(
+      slice.map((g) => generateSpritesheet(g, config, basePath, outDir))
+    );
+    // optional: inspect results for missing layers via result.details?.missingImages
+  }
+}
+```
+
+Notes for AI:
+
+- Always pass `basePath` from `getPackageBasePath()` so the generator can find `Trait Files/`.
+- Do not run in the browser. `sharp` and filesystem access require Node.js (server-side only).
+- When using Next.js, call the generator in server code (API route, route handler, or server action), not in a Client Component.
+- Avoid importing JSON via ESM assertions for portability; prefer `fs.readFileSync(path.join(basePath, "config.json"))` as shown.
+
 ESM:
 
 ```ts
