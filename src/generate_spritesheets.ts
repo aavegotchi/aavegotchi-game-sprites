@@ -19,6 +19,30 @@ function loadGotchis(jsonPath: string): Gotchi[] {
   return JSON.parse(data) as Gotchi[];
 }
 
+function normalizeAttributes(
+  originalAttributes: GotchiAttribute[]
+): GotchiAttribute[] {
+  const normalized: GotchiAttribute[] = [];
+  let hasPet = originalAttributes.some(
+    (attr) => attr.trait_type === "Wearable (Pet)" && attr.value.trim() !== ""
+  );
+
+  for (const attr of originalAttributes) {
+    if (attr.trait_type === "Wearable (Body)" && attr.value === "Foxy Tail") {
+      if (hasPet) {
+        // Skip mis-slotted Foxy Tail if a proper pet is already present
+        continue;
+      }
+      normalized.push({ trait_type: "Wearable (Pet)", value: attr.value });
+      hasPet = true;
+      continue;
+    }
+    normalized.push(attr);
+  }
+
+  return normalized;
+}
+
 function matchCondition(
   gotchiAttributes: GotchiAttribute[],
   conditionSet: ConditionSet
@@ -103,7 +127,8 @@ async function generateSpritesheet(
   outputFolder: string,
   verbose = false
 ): Promise<GenerationResult> {
-  const matchingConfig = findMatchingConfig(gotchi.attributes, config);
+  const attributes = normalizeAttributes(gotchi.attributes);
+  const matchingConfig = findMatchingConfig(attributes, config);
 
   if (!matchingConfig) {
     return {
@@ -111,7 +136,7 @@ async function generateSpritesheet(
       error: "No matching configuration found",
       details: {
         // Add a helpful detail for debugging
-        layersUsed: gotchi.attributes.map((a) => `${a.trait_type}: ${a.value}`),
+        layersUsed: attributes.map((a) => `${a.trait_type}: ${a.value}`),
       },
     };
   }
@@ -140,7 +165,7 @@ async function generateSpritesheet(
   const missingImages: string[] = [];
   const loadErrors: string[] = [];
 
-  const handWearables = gotchi.attributes.filter(
+  const handWearables = attributes.filter(
     (attr) => attr.trait_type === "Wearable (Hands)"
   );
 
@@ -184,7 +209,7 @@ async function generateSpritesheet(
       }
     } else {
       if (prop) {
-        matchingAttributes = gotchi.attributes.filter(
+        matchingAttributes = attributes.filter(
           (attr) => attr.trait_type === traitKey
         );
         folder = prop.folder;
