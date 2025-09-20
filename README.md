@@ -2,7 +2,7 @@
 
 A Node.js-based tool for generating individual sprite sheets for Aavegotchi NFTs by compositing multiple trait layers based on their attributes. This project includes both the generation engine and a web-based viewer for browsing the generated sprites.
 
-![Aavegotchi Sprite Generator Demo](screenshot.gif)
+![Aavegotchi Sprite Generator Demo](https://unpkg.com/gotchi-generator@latest/screenshot.gif)
 
 ## Features
 
