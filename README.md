@@ -341,6 +341,11 @@ npx serve website
 python3 -m http.server 8080 -d website
 ```
 
+## Examples
+
+- Phaser: see `examples/phaser.md`
+- React + Phaser: see `examples/react.md`
+
 ## Technical Details
 
 ### Dependencies
