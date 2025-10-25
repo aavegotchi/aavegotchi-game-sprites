@@ -1,0 +1,4643 @@
+{
+    "required_keys": [],
+    "settings": {
+        "id_key": "id"
+    },
+    "if_ids": [],
+    "if_keys_and_values": [
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aAAVE"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aAAVE",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aDAI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aDAI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aLINK"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aLINK",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDT"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aUSDT",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aUSDC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aTUSD"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aTUSD",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUNI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aUNI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aYFI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_aYFI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWMATIC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_amWMATIC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_amWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWBTC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "meleebody/mythic_high_amWBTC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 1
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aAAVE"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aAAVE",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aDAI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aDAI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aLINK"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aLINK",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDT"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aUSDT",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aUSDC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aTUSD"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aTUSD",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUNI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aUNI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aYFI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/aYFI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWMATIC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/amWMATIC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/amWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWBTC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/common/amWBTC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 2
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "uncommon_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/uncommon_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "uncommon_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/uncommon_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "rare_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/rare_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "rare_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/rare_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "mythical_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/mythical_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Wearable (Hands)"
+                    ],
+                    "values": []
+                },
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "mythical_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "meleebody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "meleebody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "meleebody/mythical_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "meleebody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "meleebody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "meleebody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "meleebody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "meleebody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "meleebody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 3
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aAAVE"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aAAVE",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aDAI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aDAI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aLINK"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aLINK",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDT"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aUSDT",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aUSDC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aTUSD"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aTUSD",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUNI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aUNI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aYFI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_aYFI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWMATIC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_amWMATIC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_amWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Shape"
+                    ],
+                    "values": [
+                        "mythic_high"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWBTC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Color",
+                    "folder": "punchbody/mythic_high_amWBTC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 4
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aAAVE"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aAAVE",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aDAI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aDAI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aLINK"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aLINK",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDT"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aUSDT",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUSDC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aUSDC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aTUSD"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aTUSD",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aUNI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aUNI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "aYFI"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/aYFI",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWMATIC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/amWMATIC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWETH"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/amWETH",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "common"
+                    ]
+                },
+                {
+                    "keys": [
+                        "Base Body"
+                    ],
+                    "values": [
+                        "amWBTC"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/common/amWBTC",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 5
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "uncommon_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/uncommon_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "uncommon_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/uncommon_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "rare_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/rare_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "rare_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/rare_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "mythical_low"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/mythical_low",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        },
+        {
+            "keys_and_values": [
+                {
+                    "keys": [
+                        "Eye Color"
+                    ],
+                    "values": [
+                        "mythical_high"
+                    ]
+                }
+            ],
+            "provides": [],
+            "properties": [
+                {
+                    "key": "Base Body",
+                    "folder": "punchbody/Base Body",
+                    "order": 0
+                },
+                {
+                    "key": "Wearable (Body)",
+                    "folder": "punchbody/Wearable (Body)",
+                    "order": 1
+                },
+                {
+                    "key": "Eye Shape",
+                    "folder": "punchbody/mythical_high",
+                    "order": 2
+                },
+                {
+                    "key": "Wearable (Head)",
+                    "folder": "punchbody/Wearable (Head)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Helmet)",
+                    "folder": "punchbody/Wearable (Helmet)",
+                    "order": 3
+                },
+                {
+                    "key": "Wearable (Eyes)",
+                    "folder": "punchbody/Wearable (Eyes)",
+                    "order": 4
+                },
+                {
+                    "key": "Wearable (Face)",
+                    "folder": "punchbody/Wearable (Face)",
+                    "order": 5
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands)",
+                    "next": true,
+                    "order": 6
+                },
+                {
+                    "key": "Wearable (Hands)",
+                    "folder": "punchbody/Wearable (Hands) L",
+                    "order": 7
+                },
+                {
+                    "key": "Wearable (Pet)",
+                    "folder": "punchbody/Wearable (Pet)",
+                    "order": -1
+                }
+            ],
+            "order": 6
+        }
+    ],
+    "basic": {
+        "provides": [],
+        "properties": [
+            {
+                "key": "Base Body",
+                "folder": "punchbody/Base Body",
+                "order": 0
+            },
+            {
+                "key": "Wearable (Body)",
+                "folder": "punchbody/Wearable (Body)",
+                "order": 1
+            },
+            {
+                "key": "Eye Shape",
+                "folder": "punchbody/uncommon_low",
+                "order": 7
+            },
+            {
+                "key": "Wearable (Head)",
+                "folder": "punchbody/Wearable (Head)",
+                "order": 2
+            },
+            {
+                "key": "Wearable (Eyes)",
+                "folder": "punchbody/Wearable (Eyes)",
+                "order": 3
+            },
+            {
+                "key": "Wearable (Face)",
+                "folder": "punchbody/Wearable (Face)",
+                "order": 4
+            },
+            {
+                "key": "Wearable (Hands) R",
+                "folder": "punchbody/Wearable (Hands) R",
+                "order": 5
+            },
+            {
+                "key": "Wearable (Hands) L",
+                "folder": "punchbody/Wearable (Hands) L",
+                "order": 6
+            },
+            {
+                "key": "Wearable (Pet)",
+                "folder": "punchbody/Wearable (Pet)",
+                "order": 7
+            }
+        ]
+    }
+}

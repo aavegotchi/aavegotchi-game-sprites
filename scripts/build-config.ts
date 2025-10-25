@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 
 interface ConfigProperty {
   key: string;
@@ -180,6 +181,164 @@ function build(): OutputConfig {
       ],
     },
   };
+
+  function scanItemNamesFrom(folder: string): Set<string> {
+    try {
+      if (!fs.existsSync(folder) || !fs.statSync(folder).isDirectory())
+        return new Set();
+      const exts = new Set([
+        ".png",
+        ".PNG",
+        ".jpg",
+        ".JPG",
+        ".jpeg",
+        ".JPEG",
+        ".webp",
+        ".WEBP",
+      ]);
+      const names = new Set<string>();
+      for (const file of fs.readdirSync(folder)) {
+        const ext = path.extname(file);
+        if (!exts.has(ext)) continue;
+        const base = path.parse(file).name;
+        if (base) names.add(base);
+      }
+      return names;
+    } catch {
+      return new Set();
+    }
+  }
+
+  function isGunName(name: string): boolean {
+    const n = name.toLowerCase();
+    return (
+      n.includes("gun") ||
+      n.includes("grenade") ||
+      n.includes("pistol") ||
+      n.includes("rifle") ||
+      n.includes("blaster") ||
+      n.includes("bow") ||
+      n.includes("arrow") ||
+      n.includes("crossbow") ||
+      n.includes("sniper") ||
+      n.includes("dart")
+    );
+  }
+
+  // Build allowlists with filtering so wand items don't get picked by gun cycle and vice versa
+  const gunHandsDir = path.join(
+    "Trait Files",
+    "Sprites",
+    "meleegunbody",
+    "Wearable (Hands) L"
+  );
+  const punchGunHandsDir = path.join(
+    "Trait Files",
+    "Sprites",
+    "punchgunbody",
+    "Wearable (Hands) L"
+  );
+  const rawGunItems = new Set<string>([
+    ...scanItemNamesFrom(gunHandsDir),
+    ...scanItemNamesFrom(punchGunHandsDir),
+  ]);
+  const gunHandItems = Array.from(rawGunItems).filter(isGunName).sort();
+
+  // meleegunbody should take precedence over wand/melee when any gun item is present
+  if (gunHandItems.length > 0) {
+    // mythic_high with Base Body
+    for (const base of baseBodies) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: gunHandItems },
+          { keys: ["Eye Shape"], values: ["mythic_high"] },
+          { keys: ["Base Body"], values: [base] },
+        ],
+        provides: [],
+        properties: propsMythicHigh("meleegunbody", base),
+        order: 2,
+      });
+    }
+    // common with Base Body
+    for (const base of baseBodies) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: gunHandItems },
+          { keys: ["Eye Color"], values: ["common"] },
+          { keys: ["Base Body"], values: [base] },
+        ],
+        provides: [],
+        properties: propsCommon("meleegunbody", base),
+        order: 2,
+      });
+    }
+    // other rarities (generic)
+    for (const rarity of rarityBuckets) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: gunHandItems },
+          { keys: ["Eye Color"], values: [rarity] },
+        ],
+        provides: [],
+        properties: propsRarity("meleegunbody", rarity),
+        order: 2,
+      });
+    }
+  }
+
+  // Detect wandbody-capable hand items from assets
+  const wandHandsDir = path.join(
+    "Trait Files",
+    "Sprites",
+    "wandbody",
+    "Wearable (Hands) L"
+  );
+  const rawWandItems = Array.from(scanItemNamesFrom(wandHandsDir));
+  const wandHandItems = rawWandItems.filter((n) => !isGunName(n)).sort();
+
+  // wandbody: only applies when a wand-capable hand item is equipped
+  if (wandHandItems.length > 0) {
+    // mythic_high with Base Body
+    for (const base of baseBodies) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: wandHandItems },
+          { keys: ["Eye Shape"], values: ["mythic_high"] },
+          { keys: ["Base Body"], values: [base] },
+        ],
+        provides: [],
+        properties: propsMythicHigh("wandbody", base),
+        order: 2, // replace row 2 and render before throw/melee cycle
+      });
+    }
+
+    // common with Base Body
+    for (const base of baseBodies) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: wandHandItems },
+          { keys: ["Eye Color"], values: ["common"] },
+          { keys: ["Base Body"], values: [base] },
+        ],
+        provides: [],
+        properties: propsCommon("wandbody", base),
+        order: 2,
+      });
+    }
+
+    // other rarities (generic)
+    for (const rarity of rarityBuckets) {
+      cfg.if_keys_and_values.push({
+        keys_and_values: [
+          { keys: ["Wearable (Hands)"], values: wandHandItems },
+          { keys: ["Eye Color"], values: [rarity] },
+        ],
+        provides: [],
+        properties: propsRarity("wandbody", rarity),
+        order: 2,
+      });
+    }
+  }
 
   // meleebody: mythic_high with Base Body
   for (const base of baseBodies) {

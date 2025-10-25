@@ -169,6 +169,33 @@ async function generateSpritesheet(
     (attr) => attr.trait_type === "Wearable (Hands)"
   );
 
+  // Decide which hand(s) should render when only a single hand item is present.
+  // If both hands are present, map first to L and second to R. If only one is present,
+  // prefer the side that actually has an asset; if both sides exist, default to R.
+  let selectedLeft: GotchiAttribute | null = null;
+  let selectedRight: GotchiAttribute | null = null;
+  const handsPropForSelection = propertyMap["Wearable (Hands)"];
+  if (handsPropForSelection) {
+    const baseFolderParts = handsPropForSelection.folder.split("/");
+    const folderBase = baseFolderParts
+      .slice(0, baseFolderParts.length - 1)
+      .join("/");
+    const folderLForSelection = `${folderBase}/Wearable (Hands) L`;
+    const folderRForSelection = `${folderBase}/Wearable (Hands) R`;
+
+    if (handWearables.length >= 2) {
+      selectedLeft = handWearables[0];
+      selectedRight = handWearables[1];
+    } else if (handWearables.length === 1) {
+      const single = handWearables[0];
+      const imageR = getImagePath(basePath, folderRForSelection, single.value);
+      const imageL = getImagePath(basePath, folderLForSelection, single.value);
+      if (imageR && !imageL) selectedRight = single;
+      else if (!imageR && imageL) selectedLeft = single;
+      else selectedRight = single; // both/neither found: default to right hand
+    }
+  }
+
   for (const traitKey of layerOrder) {
     let prop = propertyMap[traitKey];
     let matchingAttributes: (GotchiAttribute | undefined)[] = [];
@@ -176,35 +203,26 @@ async function generateSpritesheet(
 
     if (traitKey === "Wearable (Hands) L") {
       prop = propertyMap["Wearable (Hands)"];
-      if (prop && handWearables.length > 0) {
-        matchingAttributes = [handWearables[0]];
+      if (prop && selectedLeft) {
+        matchingAttributes = [selectedLeft];
         const baseFolderParts = prop.folder.split("/");
         baseFolderParts[baseFolderParts.length - 1] = "Wearable (Hands) L";
         folder = baseFolderParts.join("/");
         if (verbose)
           console.log(
-            `  Processing left hand: ${handWearables[0].value} from ${folder}`
+            `  Processing left hand: ${selectedLeft.value} from ${folder}`
           );
       }
     } else if (traitKey === "Wearable (Hands) R") {
       prop = propertyMap["Wearable (Hands)"];
-      if (prop && handWearables.length > 1) {
-        matchingAttributes = [handWearables[1]];
+      if (prop && selectedRight) {
+        matchingAttributes = [selectedRight];
         const baseFolderParts = prop.folder.split("/");
         baseFolderParts[baseFolderParts.length - 1] = "Wearable (Hands) R";
         folder = baseFolderParts.join("/");
         if (verbose)
           console.log(
-            `  Processing right hand: ${handWearables[1].value} from ${folder}`
-          );
-      } else if (prop && handWearables.length === 1) {
-        matchingAttributes = [handWearables[0]];
-        const baseFolderParts = prop.folder.split("/");
-        baseFolderParts[baseFolderParts.length - 1] = "Wearable (Hands) R";
-        folder = baseFolderParts.join("/");
-        if (verbose)
-          console.log(
-            `  Processing single hand item as right: ${handWearables[0].value} from ${folder}`
+            `  Processing right hand: ${selectedRight.value} from ${folder}`
           );
       }
     } else {

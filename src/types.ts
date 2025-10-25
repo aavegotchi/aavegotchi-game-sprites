@@ -5,6 +5,7 @@ export interface GotchiAttribute {
 
 export interface Gotchi {
   id: number;
+  name?: string;
   collateral?: string;
   attributes: GotchiAttribute[];
 }
