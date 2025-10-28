@@ -120,6 +120,26 @@ function getImagePath(
   return null;
 }
 
+function mapHandToProjectile(value: string): string {
+  // Alias table for any hand->projectile name differences. Defaults to identity.
+  const aliases: Record<string, string> = {
+    // "Common Wizard Staff": "Common Wizard Staff",
+    // Add overrides here if wearable name differs from projectile filename
+  };
+  return aliases[value] ?? value;
+}
+
+const TOTAL_ROWS = 6;
+
+function getProjectileOffsets(name: string): { x: number; y: number } {
+  // Base offsets to align projectile with hand; positive x => right, positive y => down
+  const base = { x: 24, y: 30 };
+  const overrides: Record<string, { x: number; y: number }> = {
+    // Example: "Witchy Wand": { x: 14, y: 20 },
+  };
+  return overrides[name] ?? base;
+}
+
 async function generateSpritesheet(
   gotchi: Gotchi,
   config: Config,
@@ -152,6 +172,7 @@ async function generateSpritesheet(
     "Wearable (Hands) L",
     "Wearable (Hands) R",
     "Wearable (Pet)",
+    "Projectile",
   ];
 
   const propertyMap: Record<string, { key: string; folder: string }> = {};
@@ -161,9 +182,10 @@ async function generateSpritesheet(
 
   let compositeImage: sharp.Sharp | null = null;
   const layersUsed: string[] = [];
-  const layerBuffers: { input: Buffer }[] = [];
+  const layerBuffers: sharp.OverlayOptions[] = [];
   const missingImages: string[] = [];
   const loadErrors: string[] = [];
+  const projectilePaths: string[] = [];
 
   const handWearables = attributes.filter(
     (attr) => attr.trait_type === "Wearable (Hands)"
@@ -225,6 +247,50 @@ async function generateSpritesheet(
             `  Processing right hand: ${selectedRight.value} from ${folder}`
           );
       }
+    } else if (traitKey === "Projectile") {
+      // Special-case: composite projectile overlays based on selected hand item(s)
+      const projectileFolder = "projectiles"; // under Trait Files/Sprites
+      const handCandidates: string[] = [];
+      if (selectedRight) handCandidates.push(selectedRight.value);
+      if (selectedLeft) handCandidates.push(selectedLeft.value);
+
+      // Try right first, then left; composite both if available
+      for (const handName of handCandidates) {
+        const projectileName = mapHandToProjectile(handName);
+        const imagePath = getImagePath(
+          basePath,
+          projectileFolder,
+          projectileName
+        );
+        if (imagePath) {
+          try {
+            // Do not composite; record path for viewer overlay
+            projectilePaths.push(imagePath);
+            layersUsed.push(`ProjectileRef: ${projectileName}`);
+            if (verbose)
+              console.log(
+                `    Found projectile ref: ${projectileName} at ${imagePath}`
+              );
+          } catch (error) {
+            const message =
+              error instanceof Error ? error.message : String(error);
+            loadErrors.push(`Projectile/${projectileName}: ${message}`);
+            if (verbose)
+              console.log(
+                `    Error loading: Projectile/${projectileName}: ${message}`
+              );
+          }
+        } else {
+          missingImages.push(
+            `Projectile/${projectileName} in ${projectileFolder}`
+          );
+          if (verbose)
+            console.log(
+              `    Missing image: Projectile/${projectileName} in ${projectileFolder}`
+            );
+        }
+      }
+      continue;
     } else {
       if (prop) {
         matchingAttributes = attributes.filter(
@@ -290,21 +356,36 @@ async function generateSpritesheet(
       await compositeImage.composite(layerBuffers).png().toFile(outputPath);
       return {
         success: true,
-        details: { layersUsed, missingImages, loadErrors },
+        details: {
+          layersUsed,
+          missingImages,
+          loadErrors,
+          projectiles: projectilePaths,
+        },
       };
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       return {
         success: false,
         error: `Failed to save spritesheet: ${message}`,
-        details: { layersUsed, missingImages, loadErrors },
+        details: {
+          layersUsed,
+          missingImages,
+          loadErrors,
+          projectiles: projectilePaths,
+        },
       };
     }
   } else {
     return {
       success: false,
       error: "No layers found to composite",
-      details: { layersUsed, missingImages, loadErrors },
+      details: {
+        layersUsed,
+        missingImages,
+        loadErrors,
+        projectiles: projectilePaths,
+      },
     };
   }
 }
@@ -423,6 +504,9 @@ async function main(): Promise<void> {
     attributes: GotchiAttribute[];
   }> = [];
 
+  const idToProjectiles: Record<number, string[]> = {};
+  const uniqueProjectileFiles = new Set<string>();
+
   for (let i = 0; i < gotchis.length; i += batchSize) {
     const batch = gotchis.slice(i, Math.min(i + batchSize, gotchis.length));
     const batchNum = Math.floor(i / batchSize) + 1;
@@ -496,6 +580,18 @@ async function main(): Promise<void> {
     batchResults.forEach((result) => {
       if (result.success) {
         successCount++;
+        const proj =
+          result.details && Array.isArray(result.details.projectiles)
+            ? result.details.projectiles
+            : [];
+        if (proj && proj.length > 0) {
+          const rels = proj.map((abs: string) => {
+            const base = path.parse(abs).base;
+            uniqueProjectileFiles.add(base);
+            return `projectiles/${base}`;
+          });
+          idToProjectiles[result.gotchi.id] = rels;
+        }
       } else {
         failCount++;
         failedGotchis.push({
@@ -568,15 +664,40 @@ async function main(): Promise<void> {
   }
 
   try {
+    // Ensure unique projectile assets are available under website/projectiles
+    const websiteRoot = path.dirname(outputFolder); // website/
+    const projectilesOutDir = path.join(websiteRoot, "projectiles");
+    if (!fs.existsSync(projectilesOutDir))
+      fs.mkdirSync(projectilesOutDir, { recursive: true });
+    uniqueProjectileFiles.forEach((fileName) => {
+      // Source under Trait Files/Sprites/projectiles
+      const srcPath = path.join(
+        "Trait Files",
+        "Sprites",
+        "projectiles",
+        fileName
+      );
+      if (fs.existsSync(srcPath)) {
+        const destPath = path.join(projectilesOutDir, fileName);
+        try {
+          fs.copyFileSync(srcPath, destPath);
+        } catch {}
+      }
+    });
+
     const outputFiles = fs.readdirSync(outputFolder);
     const spriteList = outputFiles
       .filter((fileName) => fileName.toLowerCase().endsWith(".png"))
       .map((fileName) => path.parse(fileName).name)
       .filter((baseName) => /^\d+$/.test(baseName))
-      .map((baseName) => ({
-        id: parseInt(baseName, 10),
-        path: `spritesheets/${baseName}.png`,
-      }))
+      .map((baseName) => {
+        const id = parseInt(baseName, 10);
+        return {
+          id,
+          path: `spritesheets/${baseName}.png`,
+          projectiles: idToProjectiles[id] || [],
+        };
+      })
       .sort((a, b) => a.id - b.id);
 
     const listPath = path.join(outputFolder, "list.json");

@@ -44,6 +44,7 @@ export interface GenerationDetails {
   layersUsed?: string[];
   missingImages?: string[];
   loadErrors?: string[];
+  projectiles?: string[];
 }
 
 export interface GenerationResult {
