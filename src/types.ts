@@ -5,6 +5,7 @@ export interface GotchiAttribute {
 
 export interface Gotchi {
   id: number;
+  name?: string;
   collateral?: string;
   attributes: GotchiAttribute[];
 }
@@ -43,6 +44,7 @@ export interface GenerationDetails {
   layersUsed?: string[];
   missingImages?: string[];
   loadErrors?: string[];
+  projectiles?: string[];
 }
 
 export interface GenerationResult {

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "Energy_Gun.png",
+    "name": "Energy_Gun"
+  },
+  {
+    "path": "Melee_Portal_Mage.png",
+    "name": "Melee_Portal_Mage"
+  },
+  {
+    "path": "Throw_Milkshake.png",
+    "name": "Throw_Milkshake"
+  },
+  {
+    "path": "Wand.png",
+    "name": "Wand"
+  }
+]

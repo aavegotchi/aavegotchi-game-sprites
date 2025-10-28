@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aavegotchi Sprites Viewer</title>
+    <style>
+      :root {
+        --frame-w: 100px;
+        --frame-h: 100px;
+        --fps: 12;
+        --row-index: 0;
+        --scale: 2;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0b0e13;
+        color: #e6e9ef;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(17, 24, 39, 0.9);
+        backdrop-filter: saturate(120%) blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 16px;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 10px;
+        align-items: end;
+      }
+
+      .control {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      label {
+        font-size: 12px;
+        color: #a8b3cf;
+      }
+
+      input,
+      select,
+      button {
+        background: #0f172a;
+        color: #e6e9ef;
+        border: 1px solid #263044;
+        border-radius: 8px;
+        padding: 8px 10px;
+        outline: none;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #4f46e5;
+      }
+
+      .btn {
+        cursor: pointer;
+        background: #1f2937;
+        transition: background 0.2s ease;
+      }
+
+      .btn:hover {
+        background: #273244;
+      }
+
+      .grid {
+        max-width: 1400px;
+        margin: 12px auto 40px;
+        padding: 0 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+      }
+
+      .item {
+        background: #0f172a;
+        border: 1px solid #1f2937;
+        border-radius: 12px;
+        padding: 10px 10px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .frame-wrap {
+        width: calc(var(--frame-w) * var(--scale));
+        height: calc(var(--frame-h) * var(--scale));
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+
+      .frame {
+        width: var(--frame-w);
+        height: var(--frame-h);
+        transform: scale(var(--scale));
+        transform-origin: center center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        /* default to paused to save CPU; IntersectionObserver will toggle */
+        animation-play-state: paused;
+        animation-timing-function: steps(var(--frames-per-row, 1));
+        animation-iteration-count: infinite;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--frame-w);
+        height: var(--frame-h);
+        transform: scale(var(--scale));
+        transform-origin: center center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        pointer-events: none;
+        opacity: 0; /* only show during row 2 */
+      }
+
+      .frame.is-visible {
+        animation-play-state: running;
+      }
+
+      .caption {
+        width: 100%;
+        color: #a8b3cf;
+        font-size: 12px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+          "
+        >
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">
+            Aavegotchi Sprites Viewer
+          </h2>
+          <div class="meta" id="summary">Loading…</div>
+        </div>
+        <div class="controls">
+          <div class="control">
+            <label for="frameWidth">Frame width</label>
+            <input id="frameWidth" type="number" min="1" step="1" value="100" />
+          </div>
+          <div class="control">
+            <label for="frameHeight">Frame height</label>
+            <input
+              id="frameHeight"
+              type="number"
+              min="1"
+              step="1"
+              value="100"
+            />
+          </div>
+          <div class="control">
+            <label for="fps">FPS</label>
+            <input
+              id="fps"
+              type="number"
+              min="1"
+              max="60"
+              step="1"
+              value="12"
+            />
+          </div>
+          <div class="control">
+            <label>Rows (play back-to-back)</label>
+            <div
+              id="rowsGroup"
+              style="
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 6px;
+                font-size: 12px;
+              "
+            >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="0" checked /> Idle</label
+              >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="1" /> Fly / Sprint</label
+              >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="2" /> Throw / Wand</label
+              >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="3" /> Attack</label
+              >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="4" /> Hurt</label
+              >
+              <label style="display: flex; align-items: center; gap: 6px"
+                ><input type="checkbox" value="5" /> Death</label
+              >
+            </div>
+          </div>
+          <div class="control">
+            <label for="scale">Scale</label>
+            <input
+              id="scale"
+              type="number"
+              min="1"
+              max="6"
+              step="0.5"
+              value="2"
+            />
+          </div>
+          <div class="control" style="gap: 8px">
+            <button class="btn" id="playAll">Play all</button>
+            <button class="btn" id="pauseAll">Pause all</button>
+          </div>
+          <div class="control">
+            <label for="projectile">Projectile overlay</label>
+            <select id="projectile">
+              <option value="">None</option>
+              <option value="Fireball.png">Fireball</option>
+              <option value="Link Bubbly.png">Link Bubbly</option>
+              <option value="Pitchfork.png">Pitchfork</option>
+              <option value="REKT Sign.png">REKT Sign</option>
+            </select>
+          </div>
+          <div class="control">
+            <label for="projOffsetX">Projectile offset X (px)</label>
+            <input id="projOffsetX" type="number" step="1" value="8" />
+          </div>
+          <div class="control">
+            <label for="projOffsetY">Projectile offset Y (px)</label>
+            <input id="projOffsetY" type="number" step="1" value="12" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid" id="grid"></div>
+    </main>
+
+    <script>
+      (function () {
+        const state = {
+          frameW: 100,
+          frameH: 100,
+          fps: 12,
+          row: 0, // kept for backward compat
+          rows: [0], // multi-row selection; defaults to [0]
+          scale: 2,
+          projectile: "", // filename within projectiles/ or "" for none
+          projectileOffsetX: 8,
+          projectileOffsetY: 12,
+        };
+
+        const $summary = document.getElementById("summary");
+        const $grid = document.getElementById("grid");
+
+        const $frameWidth = document.getElementById("frameWidth");
+        const $frameHeight = document.getElementById("frameHeight");
+        const $fps = document.getElementById("fps");
+        const $rowsGroup = document.getElementById("rowsGroup");
+        const $scale = document.getElementById("scale");
+        const $playAll = document.getElementById("playAll");
+        const $pauseAll = document.getElementById("pauseAll");
+        const $projectile = document.getElementById("projectile");
+        const $projOffsetX = document.getElementById("projOffsetX");
+        const $projOffsetY = document.getElementById("projOffsetY");
+
+        function setRootVars() {
+          document.documentElement.style.setProperty(
+            "--frame-w",
+            state.frameW + "px"
+          );
+          document.documentElement.style.setProperty(
+            "--frame-h",
+            state.frameH + "px"
+          );
+          document.documentElement.style.setProperty("--fps", state.fps);
+          document.documentElement.style.setProperty("--row-index", state.row);
+          document.documentElement.style.setProperty("--scale", state.scale);
+        }
+
+        function updateSummary(count) {
+          const rowsStr =
+            state.rows && state.rows.length
+              ? state.rows.join(",")
+              : String(state.row);
+          $summary.textContent = `${count} sprites • ${state.frameW}x${state.frameH}px • ${state.fps} FPS • rows ${rowsStr} • scale ${state.scale}x`;
+        }
+
+        function number(val, fallback) {
+          const n = Number(val);
+          return Number.isFinite(n) ? n : fallback;
+        }
+
+        function attachControlHandlers() {
+          $frameWidth.addEventListener("change", () => {
+            state.frameW = Math.max(1, number($frameWidth.value, state.frameW));
+            setRootVars();
+            refreshAllFrames();
+            updateSummary(items.length);
+          });
+          $frameHeight.addEventListener("change", () => {
+            state.frameH = Math.max(
+              1,
+              number($frameHeight.value, state.frameH)
+            );
+            setRootVars();
+            refreshAllFrames();
+            updateSummary(items.length);
+          });
+          $fps.addEventListener("change", () => {
+            state.fps = Math.max(1, number($fps.value, state.fps));
+            setRootVars();
+            refreshDurations();
+            updateSummary(items.length);
+          });
+          // Multi-row selection
+          $rowsGroup
+            .querySelectorAll('input[type="checkbox"]')
+            .forEach((cb) => {
+              cb.addEventListener("change", () => {
+                const selected = Array.from(
+                  $rowsGroup.querySelectorAll('input[type="checkbox"]')
+                )
+                  .filter((el) => el.checked)
+                  .map((el) => Number(el.value))
+                  .filter((n) => Number.isFinite(n));
+                state.rows = selected.length ? selected : [0];
+                state.row = state.rows[0];
+                setRootVars();
+                refreshAllFrames();
+                updateSummary(items.length);
+              });
+            });
+          $scale.addEventListener("change", () => {
+            state.scale = Math.max(1, number($scale.value, state.scale));
+            setRootVars();
+            updateSummary(items.length);
+          });
+          $playAll.addEventListener("click", () => {
+            document
+              .querySelectorAll(".frame")
+              .forEach((el) => el.classList.add("is-visible"));
+          });
+          $pauseAll.addEventListener("click", () => {
+            document
+              .querySelectorAll(".frame")
+              .forEach((el) => el.classList.remove("is-visible"));
+          });
+          $projectile.addEventListener("change", () => {
+            state.projectile = String($projectile.value || "");
+            applyOverlayToAll();
+            updateSummary(items.length);
+          });
+          $projOffsetX.addEventListener("change", () => {
+            const n = Number($projOffsetX.value);
+            state.projectileOffsetX = Number.isFinite(n) ? Math.floor(n) : 0;
+            applyOverlayOffsetsToAll();
+          });
+          $projOffsetY.addEventListener("change", () => {
+            const n = Number($projOffsetY.value);
+            state.projectileOffsetY = Number.isFinite(n) ? Math.floor(n) : 0;
+            applyOverlayOffsetsToAll();
+          });
+        }
+
+        // Track created items to recalc on control changes
+        const items = [];
+
+        function createItem(entry) {
+          const id = entry.id;
+          const src = entry.path || `spritesheets/${id}.png`;
+
+          const item = document.createElement("div");
+          item.className = "item";
+
+          const frameWrap = document.createElement("div");
+          frameWrap.className = "frame-wrap";
+          const frame = document.createElement("div");
+          frame.className = "frame";
+
+          // Overlay element for projectiles (rendered only during Row 2)
+          const overlay = document.createElement("div");
+          overlay.className = "overlay";
+
+          // Keep some metadata for recalculation on controls change
+          frame.dataset.id = String(id);
+          frame.dataset.src = src;
+          frame.dataset.imgW = "";
+          frame.dataset.imgH = "";
+          frame.dataset.framesPerRowMax = "";
+          frame.dataset.rowSequence = "";
+          frame.dataset.rowFrameCounts = "";
+          frame.dataset.totalFrames = "";
+
+          // Overlay datasets
+          overlay.dataset.src = "";
+          overlay.dataset.imgW = "";
+          overlay.dataset.imgH = "";
+          overlay.dataset.framesPerRowMax = "";
+          overlay.dataset.rowsMax = "";
+
+          // Caption
+          const caption = document.createElement("div");
+          caption.className = "caption";
+          caption.textContent = `#${id}`;
+
+          frameWrap.style.position = "relative";
+          frameWrap.appendChild(frame);
+          frameWrap.appendChild(overlay);
+          item.appendChild(frameWrap);
+          item.appendChild(caption);
+
+          // Preload image to compute frames per row
+          const img = new Image();
+          img.onload = () => {
+            frame.dataset.imgW = String(img.naturalWidth);
+            frame.dataset.imgH = String(img.naturalHeight);
+            const fprMax = Math.max(
+              1,
+              Math.floor(img.naturalWidth / state.frameW)
+            );
+            frame.dataset.framesPerRowMax = String(fprMax);
+            applyFrameStyles(frame, src);
+          };
+          img.onerror = () => {
+            caption.textContent = `#${id} (failed to load)`;
+          };
+          img.src = src;
+
+          // Initialize overlay source based on current selection
+          initOverlayForElement(overlay);
+
+          return { node: item, frame };
+        }
+
+        // Determine effective frame count per row; row 0 often has 6 frames
+        function getFramesForRow(framesPerRowMax, rowIndex) {
+          const mapping = [6, 7, 3, 6, 4, 7];
+          const desired = mapping[rowIndex];
+          const frames = Number.isFinite(desired) ? desired : framesPerRowMax;
+          return Math.max(1, Math.min(framesPerRowMax, frames));
+        }
+
+        function applyFrameStyles(frameEl, src) {
+          const imgW = Number(frameEl.dataset.imgW || "0");
+          const framesPerRowMax = Math.max(1, Math.floor(imgW / state.frameW));
+          const rowsSeq =
+            state.rows && state.rows.length ? state.rows.slice() : [state.row];
+          const frameCounts = rowsSeq.map((r) =>
+            getFramesForRow(framesPerRowMax, r)
+          );
+          const total = frameCounts.reduce((a, b) => a + b, 0);
+
+          frameEl.dataset.rowSequence = rowsSeq.join(",");
+          frameEl.dataset.rowFrameCounts = frameCounts.join(",");
+          frameEl.dataset.totalFrames = String(total);
+
+          const bgY = -(rowsSeq[0] * state.frameH);
+          frameEl.style.backgroundImage = `url(${src})`;
+          frameEl.style.backgroundPosition = `0px ${bgY}px`;
+          frameEl.style.animationName = "none";
+          frameEl.style.animationDuration = "";
+          frameEl.style.animationTimingFunction = "";
+
+          // No overlay rendering; base sprite only
+        }
+
+        // Overlay helpers
+        function projectilePath(filename) {
+          if (!filename) return "";
+          // encode each segment, keep directory as literal
+          return `projectiles/${encodeURIComponent(filename)}`;
+        }
+
+        function initOverlayForElement(overlayEl) {
+          const src = projectilePath(state.projectile);
+          if (!src) {
+            overlayEl.style.opacity = "0";
+            overlayEl.dataset.src = "";
+            overlayEl.dataset.imgW = "";
+            overlayEl.dataset.imgH = "";
+            return;
+          }
+          overlayEl.dataset.src = src;
+          const img = new Image();
+          img.onload = () => {
+            overlayEl.dataset.imgW = String(img.naturalWidth);
+            overlayEl.dataset.imgH = String(img.naturalHeight);
+            // projectile sheets: 4 frames horizontally, rows stacked vertically
+            const frameW = Math.max(1, Math.floor(img.naturalWidth / 4));
+            const approxRows = Math.max(
+              1,
+              Math.round(img.naturalHeight / frameW)
+            );
+            const rows = approxRows;
+            const frameH = Math.max(1, Math.floor(img.naturalHeight / rows));
+            overlayEl.dataset.framesPerRowMax = "4";
+            overlayEl.dataset.frameW = String(frameW);
+            overlayEl.dataset.frameH = String(frameH);
+            overlayEl.dataset.rowsMax = String(rows);
+            // size and center the overlay within the base frame
+            overlayEl.style.width = frameW + "px";
+            overlayEl.style.height = frameH + "px"; // only row 0 height
+            positionOverlay(overlayEl);
+          };
+          img.src = src;
+        }
+
+        function applyOverlayToAll() {
+          document.querySelectorAll(".overlay").forEach((overlayEl) => {
+            initOverlayForElement(overlayEl);
+          });
+        }
+
+        function positionOverlay(overlayEl) {
+          const frameW = Number(overlayEl.dataset.frameW || "0");
+          const frameH = Number(overlayEl.dataset.frameH || "0");
+          if (!frameW || !frameH) return;
+          const left =
+            Math.floor((state.frameW - frameW) / 2) + state.projectileOffsetX;
+          const top =
+            Math.floor((state.frameH - frameH) / 2) + state.projectileOffsetY;
+          overlayEl.style.left = left + "px";
+          overlayEl.style.top = top + "px";
+        }
+
+        function applyOverlayOffsetsToAll() {
+          document.querySelectorAll(".overlay").forEach((overlayEl) => {
+            positionOverlay(overlayEl);
+          });
+        }
+
+        // Manual animation loop using requestAnimationFrame
+        let rafId = 0;
+        function stepFrame(frameEl, nowMs) {
+          const totalFrames = Number(frameEl.dataset.totalFrames || "1");
+          if (totalFrames <= 1) return;
+          const frameDurationMs = 1000 / state.fps;
+          const idx = Math.floor(nowMs / frameDurationMs) % totalFrames;
+
+          const rowsSeq = (frameEl.dataset.rowSequence || "")
+            .split(",")
+            .map((s) => Number(s))
+            .filter((n) => Number.isFinite(n));
+          const counts = (frameEl.dataset.rowFrameCounts || "")
+            .split(",")
+            .map((s) => Number(s))
+            .filter((n) => Number.isFinite(n));
+
+          let acc = 0;
+          let rowIdx = 0;
+          let frameInRow = idx;
+          for (let i = 0; i < counts.length; i++) {
+            const c = counts[i];
+            if (frameInRow < c) {
+              rowIdx = i;
+              break;
+            }
+            frameInRow -= c;
+          }
+          const activeRow = rowsSeq[rowIdx] ?? 0;
+          const bgY = -(activeRow * state.frameH);
+          const bgX = -(frameInRow * state.frameW);
+          frameEl.style.backgroundPosition = `${bgX}px ${bgY}px`;
+
+          // Overlay rendering only when active row is 2
+          const overlayEl = frameEl.parentElement?.querySelector(".overlay");
+          if (!overlayEl) return;
+          const overlaySrc = projectilePath(state.projectile);
+          if (!overlaySrc) {
+            overlayEl.style.opacity = "0";
+            return;
+          }
+          if (overlayEl.dataset.src !== overlaySrc) {
+            initOverlayForElement(overlayEl);
+          }
+          if (activeRow === 2) {
+            const frameW = Number(overlayEl.dataset.frameW || "0");
+            const frameH = Number(overlayEl.dataset.frameH || "0");
+            if (!frameW || !frameH) return; // not loaded yet
+            const framesPerRow = 4;
+            const overlayIdx =
+              Math.floor(nowMs / (1000 / state.fps)) % framesPerRow;
+            const overlayRow = 0; // single row projectile
+            const oBgY = -(overlayRow * frameH);
+            const oBgX = -(overlayIdx * frameW);
+            overlayEl.style.backgroundImage = `url(${overlayEl.dataset.src})`;
+            overlayEl.style.backgroundPosition = `${oBgX}px ${oBgY}px`;
+            overlayEl.style.opacity = "1";
+          } else {
+            overlayEl.style.opacity = "0";
+          }
+        }
+
+        function animateLoop(nowMs) {
+          document
+            .querySelectorAll(".frame.is-visible")
+            .forEach((el) => stepFrame(el, nowMs));
+          rafId = requestAnimationFrame(animateLoop);
+        }
+
+        function refreshAllFrames() {
+          document.querySelectorAll(".frame").forEach((frameEl) => {
+            const src = frameEl.dataset.src;
+            const imgW = Number(frameEl.dataset.imgW || "0");
+            if (!src || !imgW) return; // not loaded yet
+            const framesPerRowMax = Math.max(
+              1,
+              Math.floor(imgW / state.frameW)
+            );
+            frameEl.dataset.framesPerRowMax = String(framesPerRowMax);
+            applyFrameStyles(frameEl, src);
+          });
+        }
+
+        function refreshRowPositions() {
+          document.querySelectorAll(".frame").forEach((frameEl) => {
+            const src = frameEl.dataset.src;
+            const imgW = Number(frameEl.dataset.imgW || "0");
+            if (!src || !imgW) return;
+            applyFrameStyles(frameEl, src);
+          });
+        }
+
+        function refreshDurations() {
+          document.querySelectorAll(".frame").forEach((frameEl) => {
+            const imgW = Number(frameEl.dataset.imgW || "0");
+            if (!imgW) return;
+            const framesPerRowMax = Math.max(
+              1,
+              Math.floor(imgW / state.frameW)
+            );
+            const rowsSeq =
+              state.rows && state.rows.length
+                ? state.rows.slice()
+                : [state.row];
+            const frameCounts = rowsSeq.map((r) =>
+              getFramesForRow(framesPerRowMax, r)
+            );
+            const total = frameCounts.reduce((a, b) => a + b, 0);
+            const durationSec = Math.max(0.01, total / state.fps);
+            frameEl.style.animationDuration = `${durationSec}s`;
+            frameEl.style.animationTimingFunction = `steps(${total})`;
+          });
+        }
+
+        // Pause animations outside viewport to save CPU
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const el = entry.target;
+              if (entry.isIntersecting) el.classList.add("is-visible");
+              else el.classList.remove("is-visible");
+            });
+          },
+          { root: null, rootMargin: "200px", threshold: 0 }
+        );
+
+        function observeFrame(el) {
+          io.observe(el);
+        }
+
+        async function loadList() {
+          const res = await fetch("spritesheets/list.json");
+          if (!res.ok)
+            throw new Error(`Failed to load list.json (${res.status})`);
+          const data = await res.json();
+          if (!Array.isArray(data)) throw new Error("Invalid list.json format");
+          return data;
+        }
+
+        async function init() {
+          setRootVars();
+          attachControlHandlers();
+          try {
+            const list = await loadList();
+            updateSummary(list.length);
+            // Render
+            const frag = document.createDocumentFragment();
+            for (const entry of list) {
+              const { node, frame } = createItem(entry);
+              items.push(frame);
+              frag.appendChild(node);
+            }
+            $grid.appendChild(frag);
+            // Observe frames for play/pause
+            items.forEach(observeFrame);
+            // Start manual animation
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(animateLoop);
+          } catch (err) {
+            console.error(err);
+            $summary.textContent = String(err);
+          }
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+</html>

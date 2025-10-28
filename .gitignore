@@ -17,5 +17,6 @@ missing_layers.json
 npm-debug.log*
 yarn-error.log
 
-website
+website/spritesheets
+website/projectiles
 Trait Files/Sprites/Marc and Stani
