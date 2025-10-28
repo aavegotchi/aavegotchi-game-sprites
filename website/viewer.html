@@ -41,7 +41,7 @@
 
       .controls {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(8, minmax(0, 1fr));
         gap: 10px;
         align-items: end;
       }
@@ -122,6 +122,20 @@
         animation-play-state: paused;
         animation-timing-function: steps(var(--frames-per-row, 1));
         animation-iteration-count: infinite;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--frame-w);
+        height: var(--frame-h);
+        transform: scale(var(--scale));
+        transform-origin: center center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        pointer-events: none;
+        opacity: 0; /* only show during row 2 */
       }
 
       .frame.is-visible {
@@ -233,6 +247,24 @@
             <button class="btn" id="playAll">Play all</button>
             <button class="btn" id="pauseAll">Pause all</button>
           </div>
+          <div class="control">
+            <label for="projectile">Projectile overlay</label>
+            <select id="projectile">
+              <option value="">None</option>
+              <option value="Fireball.png">Fireball</option>
+              <option value="Link Bubbly.png">Link Bubbly</option>
+              <option value="Pitchfork.png">Pitchfork</option>
+              <option value="REKT Sign.png">REKT Sign</option>
+            </select>
+          </div>
+          <div class="control">
+            <label for="projOffsetX">Projectile offset X (px)</label>
+            <input id="projOffsetX" type="number" step="1" value="8" />
+          </div>
+          <div class="control">
+            <label for="projOffsetY">Projectile offset Y (px)</label>
+            <input id="projOffsetY" type="number" step="1" value="12" />
+          </div>
         </div>
       </div>
     </header>
@@ -250,6 +282,9 @@
           row: 0, // kept for backward compat
           rows: [0], // multi-row selection; defaults to [0]
           scale: 2,
+          projectile: "", // filename within projectiles/ or "" for none
+          projectileOffsetX: 8,
+          projectileOffsetY: 12,
         };
 
         const $summary = document.getElementById("summary");
@@ -262,6 +297,9 @@
         const $scale = document.getElementById("scale");
         const $playAll = document.getElementById("playAll");
         const $pauseAll = document.getElementById("pauseAll");
+        const $projectile = document.getElementById("projectile");
+        const $projOffsetX = document.getElementById("projOffsetX");
+        const $projOffsetY = document.getElementById("projOffsetY");
 
         function setRootVars() {
           document.documentElement.style.setProperty(
@@ -345,6 +383,21 @@
               .querySelectorAll(".frame")
               .forEach((el) => el.classList.remove("is-visible"));
           });
+          $projectile.addEventListener("change", () => {
+            state.projectile = String($projectile.value || "");
+            applyOverlayToAll();
+            updateSummary(items.length);
+          });
+          $projOffsetX.addEventListener("change", () => {
+            const n = Number($projOffsetX.value);
+            state.projectileOffsetX = Number.isFinite(n) ? Math.floor(n) : 0;
+            applyOverlayOffsetsToAll();
+          });
+          $projOffsetY.addEventListener("change", () => {
+            const n = Number($projOffsetY.value);
+            state.projectileOffsetY = Number.isFinite(n) ? Math.floor(n) : 0;
+            applyOverlayOffsetsToAll();
+          });
         }
 
         // Track created items to recalc on control changes
@@ -362,6 +415,10 @@
           const frame = document.createElement("div");
           frame.className = "frame";
 
+          // Overlay element for projectiles (rendered only during Row 2)
+          const overlay = document.createElement("div");
+          overlay.className = "overlay";
+
           // Keep some metadata for recalculation on controls change
           frame.dataset.id = String(id);
           frame.dataset.src = src;
@@ -372,6 +429,13 @@
           frame.dataset.rowFrameCounts = "";
           frame.dataset.totalFrames = "";
 
+          // Overlay datasets
+          overlay.dataset.src = "";
+          overlay.dataset.imgW = "";
+          overlay.dataset.imgH = "";
+          overlay.dataset.framesPerRowMax = "";
+          overlay.dataset.rowsMax = "";
+
           // Caption
           const caption = document.createElement("div");
           caption.className = "caption";
@@ -379,6 +443,7 @@
 
           frameWrap.style.position = "relative";
           frameWrap.appendChild(frame);
+          frameWrap.appendChild(overlay);
           item.appendChild(frameWrap);
           item.appendChild(caption);
 
@@ -398,6 +463,9 @@
             caption.textContent = `#${id} (failed to load)`;
           };
           img.src = src;
+
+          // Initialize overlay source based on current selection
+          initOverlayForElement(overlay);
 
           return { node: item, frame };
         }
@@ -434,6 +502,71 @@
           // No overlay rendering; base sprite only
         }
 
+        // Overlay helpers
+        function projectilePath(filename) {
+          if (!filename) return "";
+          // encode each segment, keep directory as literal
+          return `projectiles/${encodeURIComponent(filename)}`;
+        }
+
+        function initOverlayForElement(overlayEl) {
+          const src = projectilePath(state.projectile);
+          if (!src) {
+            overlayEl.style.opacity = "0";
+            overlayEl.dataset.src = "";
+            overlayEl.dataset.imgW = "";
+            overlayEl.dataset.imgH = "";
+            return;
+          }
+          overlayEl.dataset.src = src;
+          const img = new Image();
+          img.onload = () => {
+            overlayEl.dataset.imgW = String(img.naturalWidth);
+            overlayEl.dataset.imgH = String(img.naturalHeight);
+            // projectile sheets: 4 frames horizontally, rows stacked vertically
+            const frameW = Math.max(1, Math.floor(img.naturalWidth / 4));
+            const approxRows = Math.max(
+              1,
+              Math.round(img.naturalHeight / frameW)
+            );
+            const rows = approxRows;
+            const frameH = Math.max(1, Math.floor(img.naturalHeight / rows));
+            overlayEl.dataset.framesPerRowMax = "4";
+            overlayEl.dataset.frameW = String(frameW);
+            overlayEl.dataset.frameH = String(frameH);
+            overlayEl.dataset.rowsMax = String(rows);
+            // size and center the overlay within the base frame
+            overlayEl.style.width = frameW + "px";
+            overlayEl.style.height = frameH + "px"; // only row 0 height
+            positionOverlay(overlayEl);
+          };
+          img.src = src;
+        }
+
+        function applyOverlayToAll() {
+          document.querySelectorAll(".overlay").forEach((overlayEl) => {
+            initOverlayForElement(overlayEl);
+          });
+        }
+
+        function positionOverlay(overlayEl) {
+          const frameW = Number(overlayEl.dataset.frameW || "0");
+          const frameH = Number(overlayEl.dataset.frameH || "0");
+          if (!frameW || !frameH) return;
+          const left =
+            Math.floor((state.frameW - frameW) / 2) + state.projectileOffsetX;
+          const top =
+            Math.floor((state.frameH - frameH) / 2) + state.projectileOffsetY;
+          overlayEl.style.left = left + "px";
+          overlayEl.style.top = top + "px";
+        }
+
+        function applyOverlayOffsetsToAll() {
+          document.querySelectorAll(".overlay").forEach((overlayEl) => {
+            positionOverlay(overlayEl);
+          });
+        }
+
         // Manual animation loop using requestAnimationFrame
         let rafId = 0;
         function stepFrame(frameEl, nowMs) {
@@ -467,7 +600,33 @@
           const bgX = -(frameInRow * state.frameW);
           frameEl.style.backgroundPosition = `${bgX}px ${bgY}px`;
 
-          // No overlay rendering
+          // Overlay rendering only when active row is 2
+          const overlayEl = frameEl.parentElement?.querySelector(".overlay");
+          if (!overlayEl) return;
+          const overlaySrc = projectilePath(state.projectile);
+          if (!overlaySrc) {
+            overlayEl.style.opacity = "0";
+            return;
+          }
+          if (overlayEl.dataset.src !== overlaySrc) {
+            initOverlayForElement(overlayEl);
+          }
+          if (activeRow === 2) {
+            const frameW = Number(overlayEl.dataset.frameW || "0");
+            const frameH = Number(overlayEl.dataset.frameH || "0");
+            if (!frameW || !frameH) return; // not loaded yet
+            const framesPerRow = 4;
+            const overlayIdx =
+              Math.floor(nowMs / (1000 / state.fps)) % framesPerRow;
+            const overlayRow = 0; // single row projectile
+            const oBgY = -(overlayRow * frameH);
+            const oBgX = -(overlayIdx * frameW);
+            overlayEl.style.backgroundImage = `url(${overlayEl.dataset.src})`;
+            overlayEl.style.backgroundPosition = `${oBgX}px ${oBgY}px`;
+            overlayEl.style.opacity = "1";
+          } else {
+            overlayEl.style.opacity = "0";
+          }
         }
 
         function animateLoop(nowMs) {
