@@ -129,6 +129,16 @@ function mapHandToProjectile(value: string): string {
   return aliases[value] ?? value;
 }
 
+function getCollateralTint(
+  baseBody: string
+): { r: number; g: number; b: number } | null {
+  // Minimal mapping: only apply where generic rarity art is visibly wrong (e.g., aAAVE turns blue)
+  const table: Record<string, { r: number; g: number; b: number }> = {
+    aAAVE: { r: 220, g: 120, b: 255 },
+  };
+  return table[baseBody] ?? null;
+}
+
 const TOTAL_ROWS = 6;
 
 function getProjectileOffsets(name: string): { x: number; y: number } {
@@ -180,6 +190,42 @@ async function generateSpritesheet(
     propertyMap[prop.key] = prop;
   }
 
+  // Ensure Eye Color overlay is available even when not specified by the config.
+  // Many legacy configs encoded color inside Eye Shape under common/<base>, but we now
+  // resolve Eye Shape by rarity folders. To preserve correct coloring, provide a
+  // default Eye Color folder that contains per-base color overlays keyed by rarity.
+  if (!propertyMap["Eye Color"]) {
+    const eyeShapeAttr = attributes.find((a) => a.trait_type === "Eye Shape");
+    const eyeShapeValue = eyeShapeAttr?.value ?? "";
+    // Only auto-add Eye Color for 'common*' eye shapes. Non-common eye shapes already
+    // encode color in their sprites and adding Eye Color would double-tint them.
+    const shouldAddEyeColor = /^common/.test(eyeShapeValue);
+    if (shouldAddEyeColor) {
+      const maticMappingLocal: Record<string, string> = {
+        amUSDT: "aUSDT",
+        amAAVE: "aAAVE",
+        amDAI: "aDAI",
+        amUSDC: "aUSDC",
+      };
+      const baseBodyAttr = attributes.find((a) => a.trait_type === "Base Body");
+      const baseBody = baseBodyAttr
+        ? maticMappingLocal[baseBodyAttr.value] || baseBodyAttr.value
+        : undefined;
+      // Derive cycle from Base Body folder when available, otherwise fall back to Eye Shape
+      const baseFolderForCycle =
+        propertyMap["Base Body"]?.folder || propertyMap["Eye Shape"]?.folder;
+      const cycle = baseFolderForCycle
+        ? baseFolderForCycle.split("/")[0]
+        : "punchbody";
+      if (baseBody) {
+        propertyMap["Eye Color"] = {
+          key: "Eye Color",
+          folder: `${cycle}/mythic_high_${baseBody}`,
+        } as { key: string; folder: string };
+      }
+    }
+  }
+
   let compositeImage: sharp.Sharp | null = null;
   const layersUsed: string[] = [];
   const layerBuffers: sharp.OverlayOptions[] = [];
@@ -222,6 +268,7 @@ async function generateSpritesheet(
     let prop = propertyMap[traitKey];
     let matchingAttributes: (GotchiAttribute | undefined)[] = [];
     let folder: string | null = null;
+    let eyeShapeTint: { r: number; g: number; b: number } | null = null;
 
     if (traitKey === "Wearable (Hands) L") {
       prop = propertyMap["Wearable (Hands)"];
@@ -297,6 +344,71 @@ async function generateSpritesheet(
           (attr) => attr.trait_type === traitKey
         );
         folder = prop.folder;
+
+        // Special handling for Eye Shape: determine the correct folder based on the Eye Shape value
+        if (
+          traitKey === "Eye Shape" &&
+          matchingAttributes.length > 0 &&
+          matchingAttributes[0]
+        ) {
+          const eyeShapeValue = matchingAttributes[0].value;
+          // Extract rarity from Eye Shape value (e.g., "rare_high_3" -> "rare_high")
+          const rarityMatch = eyeShapeValue.match(
+            /^(uncommon_low|uncommon_high|rare_low|rare_high|mythical_low|mythical_high|mythic_low|mythic_high|common)/
+          );
+          if (rarityMatch) {
+            const rawRarity = rarityMatch[1];
+            // Normalize mythic_* -> mythical_* to match directory names
+            const normalizedRarity = rawRarity.startsWith("mythic_")
+              ? rawRarity.replace(/^mythic_/, "mythical_")
+              : rawRarity;
+
+            // Extract the cycle name from the prop folder (e.g., "meleebody/common/amWETH" -> "meleebody")
+            const folderParts = prop.folder.split("/");
+            const cycle = folderParts[0];
+            const baseFromProp = folderParts.includes("common")
+              ? folderParts[folderParts.length - 1]
+              : null;
+
+            // For 'common', assets live under cycle/common/<token>/common_?.png
+            // Keep the configured folder (which includes the token) instead of dropping it.
+            if (normalizedRarity === "common") {
+              folder = prop.folder;
+            } else {
+              // Prefer collateral-specific art if it exists under common/<base>
+              const maticMappingLocal: Record<string, string> = {
+                amUSDT: "aUSDT",
+                amAAVE: "aAAVE",
+                amDAI: "aDAI",
+                amUSDC: "aUSDC",
+              };
+              const baseBodyAttr = attributes.find(
+                (a) => a.trait_type === "Base Body"
+              );
+              const baseBody = baseBodyAttr
+                ? maticMappingLocal[baseBodyAttr.value] || baseBodyAttr.value
+                : baseFromProp;
+
+              let chosenFolder = `${cycle}/${normalizedRarity}`;
+              if (baseBody) {
+                const preferred = `${cycle}/common/${baseBody}`;
+                const preferredPath = getImagePath(
+                  basePath,
+                  preferred,
+                  eyeShapeValue
+                );
+                if (preferredPath) {
+                  chosenFolder = preferred;
+                } else {
+                  // No collateral-specific asset: use rarity folder and tint to base color if known
+                  const tint = getCollateralTint(baseBody);
+                  if (tint) eyeShapeTint = tint;
+                }
+              }
+              folder = chosenFolder;
+            }
+          }
+        }
       }
     }
 
@@ -309,7 +421,17 @@ async function generateSpritesheet(
 
       if (imagePath) {
         try {
-          const imageBuffer = await sharp(imagePath).png().toBuffer();
+          let imageBuffer = await sharp(imagePath).png().toBuffer();
+          if (traitKey === "Eye Shape" && eyeShapeTint) {
+            if (verbose)
+              console.log(
+                `    Tinting Eye Shape to base color rgb(${eyeShapeTint.r},${eyeShapeTint.g},${eyeShapeTint.b})`
+              );
+            imageBuffer = await sharp(imageBuffer)
+              .tint(eyeShapeTint)
+              .png()
+              .toBuffer();
+          }
           const metadata = await sharp(imageBuffer).metadata();
 
           if (!compositeImage) {
